@@ -3,8 +3,7 @@ console.log(`App.js is running`)
 const app = {
     title: 'Indecision App',
     subtitle: 'The Ultimate React App',
-    options: [
-    ]
+    options: [],
 }
 
 const onFormSubmit = (e) => {
@@ -24,25 +23,30 @@ const removeAllItems = () => {
     renderApp()
 }
 
-
 const appRoot = document.getElementById('app')
-
 
 const renderApp = () => {
     const template = (
         <div>
             <h1>{app.title}</h1>
             {app.subtitle && <p>{app.subtitle}</p>}
-            <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
+            <p>
+                {app.options.length > 0
+                    ? 'Here are your options'
+                    : 'No options'}
+            </p>
             <p>{app.options.length}</p>
-            <button onClick={removeAllItems} >Remove All</button>
+
+            <button onClick={removeAllItems}>Remove All</button>
+
             <ol>
-                {
-                    app.options.map((option) => <li key={option}>{option}</li>)
-                }
+                {app.options.map((option) => {
+                    ;<li key={option}>{option}</li>
+                })}
             </ol>
+
             <form onSubmit={onFormSubmit}>
-                <input type="text" name="option" />
+                <input type='text' name='option' />
                 <button>Add Option</button>
             </form>
         </div>

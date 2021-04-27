@@ -60,7 +60,7 @@ var renderApp = function renderApp() {
             'ol',
             null,
             app.options.map(function (option) {
-                return React.createElement(
+                ;React.createElement(
                     'li',
                     { key: option },
                     option
